@@ -5,15 +5,15 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
+
 
 public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("IndexPage.fxml"));
+			AnchorPane root = (AnchorPane) FXMLLoader.load(Main.class.getResource("IndexPage.fxml"));
 			Scene scenc = new Scene(root);
 			primaryStage.setScene(scenc);
 			primaryStage.show();
