@@ -1,13 +1,10 @@
 import java.lang.Thread;
-import java.util.Random;
 
 public class Smoker implements Runnable{
 	
 	private Table table;
-	
 	private int ID;
 	private int smokeCounter;
-
 	
 	public Smoker(Table t,int id) {
 		table=t;
@@ -18,22 +15,18 @@ public class Smoker implements Runnable{
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
-		Random r=new Random();
 		try {
 			while(true) {
-				if(table.turn==ID) {
-					synchronized(table) {	
+				if(Table.turn==ID) {
+					synchronized(table) {
+						//Smoking animation here
+						System.out.println("Smoker with "+table.getItem(ID)+" is smoking...");
+						table.setTimeLabel(3);
+						Thread.sleep(3000);
 						counterIncrease();
-						/*for(int i=0;i<210;i++) {
-							for(int j=0;j<=i;j++) {
-								System.out.append('*');
-							}
-							Thread.sleep(10);
-							System.out.append('\n');
-						}*/
+						//Set smokeCounter on GUI here
 						System.out.println("Smoker with "+table.getItem(ID)+" smokes "+smokeCounter+" time.");
 						table.tidyTable();
-						Thread.sleep(5000);
 					}
 				}else {
 					Thread.sleep(100);
@@ -49,7 +42,7 @@ public class Smoker implements Runnable{
 		smokeCounter++;
 	}	
 	
-	public int getCount() {
+	private int getCount() {
 		return smokeCounter;
 	}
 

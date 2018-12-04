@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
@@ -10,16 +11,9 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IndexController">
    <children>
-      <AnchorPane layoutX="119.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="131.0" AnchorPane.topAnchor="14.0">
-         <children>
-            <ImageView fx:id="back" fitHeight="197.0" fitWidth="200.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../res/drawable/indexBackground.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-      <Button fx:id="start" contentDisplay="CENTER" layoutX="192.0" layoutY="250.0" mnemonicParsing="false" onAction="#onStartClick" text="START" />
-      <Label id="time" layoutX="195.0" layoutY="214.0" text="00:00:00" />
+      <Label fx:id="time" layoutX="161.0" layoutY="63.0" text="00:00">
+         <font>
+            <Font size="50.0" />
+         </font></Label>
    </children>
 </AnchorPane>
