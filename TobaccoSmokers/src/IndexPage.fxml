@@ -9,11 +9,74 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IndexController">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="IndexController">
    <children>
-      <Label fx:id="time" layoutX="161.0" layoutY="63.0" text="00:00">
+      <ImageView id="background" fitHeight="150.0" fitWidth="200.0" layoutX="400.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" scaleX="5.0" scaleY="5.0">
+         <image>
+            <Image url="@../res/drawable/Background.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="girl" fitHeight="450.0" fitWidth="600.0" layoutX="37.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/girl0.png" />
+         </image></ImageView>
+      <ImageView fx:id="boy1" fitHeight="450.0" fitWidth="600.0" layoutX="396.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/boy10.png" />
+         </image></ImageView>
+      <ImageView fx:id="boy2" fitHeight="450.0" fitWidth="600.0" layoutX="726.0" layoutY="237.0" pickOnBounds="true" preserveRatio="true">
+      	<image>
+            <Image url="@../res/drawable/boy20.png" />
+         </image></ImageView>
+      <ImageView id="table" fitHeight="202.0" fitWidth="355.0" layoutX="231.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/table.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tobacoo" fitHeight="150.0" fitWidth="200.0" layoutX="130.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/tobacco.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="paper" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/paper.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="lighter" fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/lighter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="cigeratte" fitHeight="32.0" fitWidth="116.0" layoutX="350.0" layoutY="400.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/cigeratte.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="timer" layoutX="858.0" layoutY="14.0" text="00:00">
          <font>
             <Font size="50.0" />
          </font></Label>
+      <Label fx:id="count0" layoutX="123.0" layoutY="166.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="count1" layoutX="493.0" layoutY="150.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="count2" layoutX="820.0" layoutY="258.0" text="0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="cover" fitHeight="750.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../res/drawable/cover.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="start" layoutX="459.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#onClick" text="START" />
    </children>
 </AnchorPane>
