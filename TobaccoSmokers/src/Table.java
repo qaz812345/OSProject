@@ -38,17 +38,17 @@ public class Table {
 				if(item==0)
 					Platform.runLater(()->{
 						fade(tobacooImg,0.0,1.0);
-						move(tobacooImg,350,100);
+						move(tobacooImg,-150,110);
 					});
 				else if(item==1)
 					Platform.runLater(()->{
 						fade(paperImg,0.0,1.0);
-						move(paperImg,350,100);
+						move(paperImg,0,125);
 					});
 				else
 					Platform.runLater(()->{
 						fade(lighterImg,0.0,1.0);
-						move(lighterImg,350,100);
+						move(lighterImg,110,130);
 					});
 				Thread.sleep(2000);
 				System.out.println(items[item]+" is set!");
@@ -72,10 +72,10 @@ public class Table {
 		for(int i=0;i<3;i++) {
 			setedItem[i]=false;
 		}
-		Platform.runLater(()->move(tobacooImg,130,40));
-		Platform.runLater(()->move(paperImg,350,40));
-		Platform.runLater(()->move(lighterImg,600,40));
-		Platform.runLater(()->move(cigaretteImg,350,70));
+		Platform.runLater(()->move(tobacooImg,0,40));
+		Platform.runLater(()->move(paperImg,0,40));
+		Platform.runLater(()->move(lighterImg,0,40));
+		Platform.runLater(()->move(cigaretteImg,0,70));
 		System.out.println("Table is tidy up!");
 		System.out.append('\n');
 		
@@ -126,7 +126,7 @@ public class Table {
 	
 	public synchronized void setTimeLabel(int s) {
 		CountDown timer = new CountDown();
-		//傾聽計時器timeout事件(可選的事件，不實作也可以使用timer
+		//嚙踝蕭聽嚙緘嚙褕橘蕭timeout嚙複伐蕭(嚙箠嚙踝的嚙複伐蕭A嚙踝蕭嚙踝蕭@嚙稽嚙箠嚙瘡嚙誕伐蕭timer
 		timer.addListener(new CountDown.Listener() {
 			@Override
 			public void timeOut() {

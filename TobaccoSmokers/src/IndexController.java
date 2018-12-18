@@ -53,13 +53,13 @@ public class IndexController implements Initializable {
 		ft.setFromValue(1.0);
 		ft.setToValue(0.0);
 		ft.play();
-		Table table=new Table(timer,tobacoo,paper,lighter,cigeratte);//¦@¥Îª«¥ó
+		Table table=new Table(timer,tobacoo,paper,lighter,cigeratte);//ï¿½@ï¿½Îªï¿½ï¿½ï¿½
 		Smoker smoker[]=new Smoker[3];
 		Agent agent[]=new Agent[3];
 		Thread threads[]=new Thread[6];
-		smoker[0]=new Smoker(table,0,girl,"girl",count0,-100,-30);
-		smoker[1]=new Smoker(table,1,boy1,"boy1",count1,0,-30);
-		smoker[2]=new Smoker(table,2,boy2,"boy2",count2,100,-30);
+		smoker[0]=new Smoker(table,0,girl,"girl",count0,-200,-60);
+		smoker[1]=new Smoker(table,1,boy1,"boy1",count1,0,-100);
+		smoker[2]=new Smoker(table,2,boy2,"boy2",count2,330,10);
 		agent[0]=new Agent(table,0,tobacoo,100,100);
 		agent[1]=new Agent(table,1,paper,0,100);
 		agent[2]=new Agent(table,2,lighter,-100,100);

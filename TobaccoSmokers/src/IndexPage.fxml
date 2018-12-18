@@ -28,22 +28,22 @@
       	<image>
             <Image url="@../res/drawable/boy20.png" />
          </image></ImageView>
-      <ImageView id="table" fitHeight="202.0" fitWidth="355.0" layoutX="231.0" layoutY="512.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="table" fitHeight="321.0" fitWidth="513.0" layoutX="91.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/table.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tobacoo" fitHeight="150.0" fitWidth="200.0" layoutX="130.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tobacoo" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/tobacco.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="paper" fitHeight="150.0" fitWidth="200.0" layoutX="350.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="paper" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/paper.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="lighter" fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="40.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="lighter" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/lighter.png" />
          </image>
@@ -77,6 +77,9 @@
             <Image url="@../res/drawable/cover.png" />
          </image>
       </ImageView>
-      <Button fx:id="start" layoutX="459.0" layoutY="482.0" mnemonicParsing="false" onMouseClicked="#onClick" text="START" />
+      <Button fx:id="start" layoutX="444.0" layoutY="629.0" mnemonicParsing="false" onMouseClicked="#onClick" prefHeight="59.0" prefWidth="126.0" text="START">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
    </children>
 </AnchorPane>
