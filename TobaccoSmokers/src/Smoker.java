@@ -4,7 +4,6 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Pos;
 import javafx.util.Duration;
 import javafx.application.Platform;
 import javafx.scene.control.Label;
@@ -16,15 +15,15 @@ public class Smoker implements Runnable{
 	private Table table;
 	private int item;
 	private int smokeCounter;
+	private int xOffset;
+	private int yOffset;
+	private int i=0;
+	private String name;
+	private Label countLab;
 	public ImageView img;
 	final public ArrayList<Image> imgList;
-	public String name;
-	public Label countLab;
-	public int xOffset;
-	public int yOffset;
-	public int i=0;
 	
-	public Smoker(Table t,int id,ImageView i,String s,Label c,int x,int y) {
+	public Smoker(Table t,int id,ImageView i,String s,Label c,int xo,int yo) {
 		table=t;
 		item=id;
 		smokeCounter=0;
@@ -39,15 +38,15 @@ public class Smoker implements Runnable{
 		imgList.add(new Image("file:res/drawable/"+name+"2.png"));
 		imgList.add(new Image("file:res/drawable/"+name+"1.png"));
 		imgList.add(new Image("file:res/drawable/"+name+"0.png"));
-		xOffset=x;
-		yOffset=y;
+		xOffset=xo;
+		yOffset=yo;
 	}
 	
 	@Override
 	public void run() {
 		// TODO Auto-generated method stub
 		try {
-			Thread.sleep((3-item)*100);
+			//Thread.sleep((3-item)*100);
 			while(true) {
 				if(Table.turn==item) {
 					synchronized(table) {						
@@ -70,13 +69,13 @@ public class Smoker implements Runnable{
 						    timeline.setCycleCount(7);
 						    timeline.playFromStart();
 						});
-						table.setTimeLabel(Table.sleepTime);
-						Thread.sleep(Table.sleepTime*1000);
+						Table.setTimeLabel(Table.smokeTime);
+						Thread.sleep(Table.smokeTime*1000);
 						System.out.println("Smoker with "+table.getItem(item)+" is smoking...");
 						counterIncrease();
 						Platform.runLater(()->countLab.setText(String.valueOf(smokeCounter)));
 						System.out.println("Smoker with "+table.getItem(item)+" smokes "+smokeCounter+" time.");
-						table.tidyTable();
+						Table.tidyTable();
 					}
 				}else {
 					Thread.sleep(100);
