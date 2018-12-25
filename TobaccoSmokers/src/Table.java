@@ -9,25 +9,25 @@ import javafx.util.Duration;
 
 public class Table {
 	
-	private int currentCount=0;
-	private final int totalCount=3;
+	private static final int totalCount=3;
+	private static int currentCount=0;
 	public static int itemCount=0;// itemCount==2 => available
 	public static int turn=-1;
-	public static final int sleepTime=3;
+	public static final int smokeTime=3;
 	public static boolean[] setedItem= {false,false,false};
-	public String[] items= {"tabacco","cigarette paper","match"};
-	public Label timeLab;
-	public ImageView tobacooImg,paperImg,lighterImg,cigaretteImg;
+	public static String[] items= {"tobacco","cigarette paper","match"};
+	public static Label timeLab;
+	public static ImageView tobaccoImg,paperImg,lighterImg,cigaretteImg;
 	
 	public Table(Label l,ImageView t,ImageView p,ImageView m,ImageView c) {
 		timeLab=l;
-		tobacooImg=t;
+		tobaccoImg=t;
 		paperImg=p;
 		lighterImg=m;
 		cigaretteImg=c;
 	}
 	
-	public synchronized void setTable(int item,int s){
+	public synchronized static void setTable(int item,int s){
 		try {
 			if(itemCount<2){
 				setTimeLabel(s);
@@ -37,8 +37,8 @@ public class Table {
 				setedItem[item]=true;
 				if(item==0)
 					Platform.runLater(()->{
-						fade(tobacooImg,0.0,1.0);
-						move(tobacooImg,-150,110);
+						fade(tobaccoImg,0.0,1.0);
+						move(tobaccoImg,-150,110);
 					});
 				else if(item==1)
 					Platform.runLater(()->{
@@ -65,14 +65,14 @@ public class Table {
 		
 	}
 	
-	public synchronized void tidyTable() {
+	public synchronized static void tidyTable() {
 		itemCount=0;
 		currentCount=0;
 		turn=-1;
 		for(int i=0;i<3;i++) {
 			setedItem[i]=false;
 		}
-		Platform.runLater(()->move(tobacooImg,0,40));
+		Platform.runLater(()->move(tobaccoImg,0,40));
 		Platform.runLater(()->move(paperImg,0,40));
 		Platform.runLater(()->move(lighterImg,0,40));
 		Platform.runLater(()->move(cigaretteImg,0,70));
@@ -87,8 +87,8 @@ public class Table {
 	
 	public void makeCigarette(int x,int y) {
 		fade(cigaretteImg,0.0,1.0);
-		if(tobacooImg.getOpacity()==1.0) {
-			fade(tobacooImg,1.0,0.0);
+		if(tobaccoImg.getOpacity()==1.0) {
+			fade(tobaccoImg,1.0,0.0);
 		}
 		if(paperImg.getOpacity()==1.0) {
 			fade(paperImg,1.0,0.0);
@@ -106,7 +106,7 @@ public class Table {
 		fade(cigaretteImg,1.0,0.0);
 	}
 	
-	public void move(ImageView img,int x,int y) {
+	public static void move(ImageView img,int x,int y) {
 		TranslateTransition tt = new TranslateTransition();
 		tt.setDelay(Duration.millis(1000));
 		tt.setNode(img);
@@ -115,7 +115,7 @@ public class Table {
 		tt.play();
 	}
 	
-	private void fade(ImageView img,double from,double to) {
+	private static void fade(ImageView img,double from,double to) {
 		FadeTransition ft = new FadeTransition();
 		ft.setDelay(Duration.millis(500));
 		ft.setNode(img);
@@ -124,25 +124,21 @@ public class Table {
 		ft.play();
 	}
 	
-	public synchronized void setTimeLabel(int s) {
+	public synchronized static void setTimeLabel(int s) {
 		CountDown timer = new CountDown();
-		//��ť�p�ɾ�timeout�ƥ�(�i�諸�ƥ�A����@�]�i�H�ϥ�timer
 		timer.addListener(new CountDown.Listener() {
-			@Override
-			public void timeOut() {
-				//Platform.runLater(()->timeLab.setText("00:00"));
-			}
 
 			@Override
 			public void onChange(long sec) {
 				//System.out.println("sec=>00:"+((sec<10)?"0":"")+String.valueOf(sec));
-				Platform.runLater(()->timeLab.setText("00:"+((sec<10)?"0":"")+String.valueOf(sec)));
+				if(sec>=0)
+					Platform.runLater(()->timeLab.setText("00:"+((sec<10)?"0":"")+String.valueOf(sec)));
 			}
 		});
 		timer.startTimer(s);
 	}
 	
-	public synchronized int getPoissonRandom(double mean) {
+	public int getPoissonRandom(double mean) {
 		Random r = new Random();
 		double L = Math.exp(-mean);
 		int k = 0;
@@ -151,7 +147,6 @@ public class Table {
 			p = p * r.nextDouble();
 			k++;
 		} while (p > L);
-		//System.out.println("Wait time:"+(k-1));
 		return k-1;
 	}
 

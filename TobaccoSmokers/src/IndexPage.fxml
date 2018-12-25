@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
@@ -33,7 +34,7 @@
             <Image url="@../res/drawable/table.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tobacoo" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="tobacco" fitHeight="150.0" fitWidth="200.0" layoutX="300.0" layoutY="200.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/tobacco.png" />
          </image>
@@ -48,26 +49,41 @@
             <Image url="@../res/drawable/lighter.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="cigeratte" fitHeight="32.0" fitWidth="116.0" layoutX="350.0" layoutY="400.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="cigarette" fitHeight="32.0" fitWidth="116.0" layoutX="350.0" layoutY="400.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../res/drawable/cigeratte.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="77.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true" scaleX="0.6" scaleY="0.6">
+         <image>
+            <Image url="@../res/drawable/tobacco.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="446.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true" scaleX="0.7" scaleY="0.7">
+         <image>
+            <Image url="@../res/drawable/paper.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="778.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" scaleX="0.7" scaleY="0.7">
+         <image>
+            <Image url="@../res/drawable/lighter.png" />
          </image>
       </ImageView>
       <Label fx:id="timer" layoutX="858.0" layoutY="14.0" text="00:00">
          <font>
             <Font size="50.0" />
          </font></Label>
-      <Label fx:id="count0" layoutX="123.0" layoutY="166.0" text="0">
+      <Label fx:id="count0" layoutX="123.0" layoutY="175.0" text="0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="count1" layoutX="493.0" layoutY="150.0" text="0">
+      <Label fx:id="count1" layoutX="486.0" layoutY="151.0" text="0">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="count2" layoutX="820.0" layoutY="258.0" text="0">
+      <Label fx:id="count2" layoutX="827.0" layoutY="259.0" text="0">
          <font>
             <Font size="24.0" />
          </font>

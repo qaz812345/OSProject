@@ -3,15 +3,13 @@ import java.util.TimerTask;
 
 public class CountDown {
 	public interface Listener{
-		//倒數結束事件
-		public void timeOut();
 		//秒數變動事件
 		public void onChange(long sec);
 	}
 	private Listener listener;
 	private Timer timer;
 	private long delay;
- 	private long sec;	 
+ 	private long sec=0;	 
  	public CountDown() {
 		delay = 1;
 	}
